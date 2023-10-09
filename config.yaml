@@ -1,0 +1,20 @@
+data_preparation:
+  dataset_path: /kaggle/input/breast-histopathology-images
+
+data_pipeline:
+  train_split: 0.8
+  val_split: 0.1
+  batch_size: 32
+  target_size: (50, 50)
+
+training:
+  num_epochs: 30
+  track_metric: loss
+  
+model_building:
+  init_lr: 1e-2
+  input_shape: (50, 50, 3)
+  num_classes: 1
+
+evaluation:
+  threshold: 0.5
