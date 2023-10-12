@@ -39,7 +39,7 @@ class Trainer:
         to_track = self.config.training.track_metric
         checkpoint_path = "run" + "/sm-{epoch}"
         checkpoint_path = checkpoint_path + "-{" + to_track + ":4.5f}"
-        mc = tfkc.ModelCheckpoint(file_path=checkpoint_path, save_weights_only=False)
+        mc = tfkc.ModelCheckpoint(filepath=checkpoint_path, save_weights_only=False)
         tb = tfkc.TensorBoard(log_dir='run/' + 'tensorboard')
         callbacks.append(mc)
         callbacks.append(tb)
